@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Llode/Fstack18_vko3#readme",
   "dependencies": {
     "cors": "^2.8.4",
+    "date-and-time": "^0.6.2",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
     "winston": "^2.4.0"
