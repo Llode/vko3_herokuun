@@ -8,15 +8,13 @@ const cors = require('cors')
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
+app.use(express.static('build'))
 
 morgan.token('type', (req,res) => {
     return JSON.stringify(req.body)
 })
 app.use(morgan(':method :url :type :status :res[content-length] - :response-time ms'))
 
-//app.use(morgan('dev'))
-
-const baseUrl = 'http://localhost:3001/api/persons'
 
 let persons = [
     {
@@ -56,12 +54,12 @@ let now = new Date();
 
 
 
-app.get('/info', (req, res) => {
+app.get('/api/info', (req, res) => {
     const txt = `<ul>Puhelinluettelossa on ${personCount()} henkilön tiedot <BR/> ${now}</ul>`
     res.send(txt)
 })
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.send('<hi>ASD</h1>')
 })
 
