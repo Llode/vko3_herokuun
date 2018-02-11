@@ -16,7 +16,7 @@ const pers = process.argv[2]
 const nro = process.argv[3]
 
 const generateId = () => {
-    max = 600
+    const max = 600
     const maxId = Math.floor(Math.random() * Math.floor(max))
     console.log('idnro ', maxId)
     return maxId

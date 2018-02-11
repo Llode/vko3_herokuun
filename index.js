@@ -141,7 +141,7 @@ app.delete('/api/persons/:id', (req, res) => {
 
 //id-generointi
 const generateId = () => {
-    max = 600
+    const max = 600
     const maxId = Math.floor(Math.random() * Math.floor(max))
     console.log('idnro ', maxId)
     return maxId
